@@ -1,18 +1,29 @@
 body {
     margin: 0;
     padding: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-color: #f0f0f0;
 }
 
+
+.page-header {
+    background-color: #ffffff; /* White background */
+    border-bottom: 2px solid #000000; /* Black border at the bottom */
+    padding: 10px; /* Add padding to the header */
+    text-align: center; /* Center-align the text */
+}
+
+.page-header h1 {
+    margin: 0; /* Remove default margin for h1 */
+    color: #000000; /* Black text color */
+}
+
 .image-container {
     width: 90%; /* Adjust the width of the container */
-    max-width: 90%; /* Adjust the maximum width of the container */
     height: auto; /* Allow the height to adjust based on the image's aspect ratio */
-    padding: 20px; /* Add pSadding to increase the distance from the website walls */
+    padding: 5%; /* Add pSadding to increase the distance from the website walls */
     box-sizing:content-box; /* Include padding in the total width */
 }
 
@@ -28,11 +39,11 @@ body {
     height: auto;
     object-fit: cover; /* Maintain aspect ratio while covering the entire grid cell */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow to images */
-    transition: transform 0.3s, margin 0.3s;
+    transition: transform 1s, margin 1s;
 }
 .image-grid img:hover {
     transform: scale(1.2); /* Increase the size of the image on hover */
-    margin: -15px; /* Decrease the distance between images on hover */
+    margin: -40px; /* Decrease the distance between images on hover */
 }
 
 .label-container {
