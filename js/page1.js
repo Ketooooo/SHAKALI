@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Function to handle horizontal scrolling on mouse wheel event
     const imageScroll = document.querySelector('.image-scroll');
     let isScrolling;
 
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     });
 
+    // Function for smooth scrolling transition
     function smoothScroll(element) {
         element.style.scrollBehavior = 'smooth';
         setTimeout(() => {
@@ -34,6 +36,7 @@ const imageInfo = [
     // Add more color objects as needed
 ];
 
+// Event listeners for mouseenter and mouseleave on each image
 const images = document.querySelectorAll('.image-scroll img');
 
 images.forEach((image, index) => {
@@ -52,4 +55,3 @@ images.forEach((image, index) => {
         document.body.style.backgroundColor = '';
     });
 });
-

@@ -1,13 +1,16 @@
+/* Reset default margin and hide vertical scroll bars */
 body {
     margin: 0;
-    overflow: hidden; /* Hide vertical scroll bars */
+    overflow: hidden;
 }
 
+/* Hide vertical and horizontal scroll bars in the scroll container */
 .scroll-container {
-    overflow-x: hidden; /* Hide horizontal scroll bars */
-    overflow-y: hidden; /* Hide vertical scroll bars */
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
+/* Styling for the container of scrollable images */
 .image-scroll {
     gap: 20px; /* Space between images */
     display: flex;
@@ -19,14 +22,15 @@ body {
     -ms-overflow-style: none; /* Hide IE scrollbar */
 }
 
+/* Hide scrollbar for WebKit-based browsers (Chrome/Edge) */
 .image-scroll::-webkit-scrollbar {
-    display: none; /* Hide Chrome/Edge scrollbar */
+    display: none;
 }
 
-/* Ensure images scroll horizontally */
+/* Styling for the individual images within the scroll container */
 .image-scroll img {
-    width: 30%;
-    height: 50%;
+    width: 30%; /* Set image width */
+    height: 50%; /* Set image height */
     flex: 0 0 auto;
     margin-right: 50px; /* Adjust the space between images */
     transition: transform 0.3s ease; /* Smooth transition on transform */
@@ -34,5 +38,5 @@ body {
 
 /* Enlarge image on hover */
 .image-scroll img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Scale image to 110% on hover */
 }

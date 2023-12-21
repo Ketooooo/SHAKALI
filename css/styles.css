@@ -1,0 +1,92 @@
+/* Body styles */
+body {
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+    background-color: #f0f0f0; /* Set background color */
+}
+
+/* Header styles */
+.header {
+    position: fixed; /* Fix header position */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    background-color: black; /* Background color for header */
+    color: #fff; /* Text color for header */
+    padding: 20px; /* Padding around header content */
+    z-index: 1000; /* Set stacking order */
+}
+
+/* Vertical name styles */
+.vertical-name {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange spans in a column */
+}
+
+.vertical-name span {
+    font-size: 24px; /* Set font size */
+    line-height: 30px; /* Set line height */
+}
+
+/* Body styles for image container */
+.image-container {
+    width: 80%; /* Adjust the width of the container */
+    max-width: 80%; /* Adjust the maximum width of the container */
+    height: auto; /* Allow height to adjust based on image aspect ratio */
+    padding: 50px; /* Padding around the container */
+    box-sizing: content-box; /* Include padding in the total width */
+
+}
+
+/* Grid layout for images */
+.image-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Display 3 pictures in a row */
+    gap: 150px; /* Gap between images */
+    margin: 0 auto; /* Center the grid within the container */
+}
+
+/* Styling for images within the grid */
+.image-grid img {
+    width: 100%; /* Images take up 100% of the grid cell */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Maintain aspect ratio while covering grid cell */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow to images */
+    transition: transform 0.3s, margin 0.3s; /* Transition effects on hover */
+    border: none;
+}
+
+/* Border style when not hovering */
+.image-grid img:not(:hover) {
+    border: 2px solid #000; /* Display a 2px solid black border when not hovering */
+}
+
+/* Enlarge image on hover */
+.image-grid img:hover {
+    transform: scale(1.2); /* Scale image on hover */
+    margin: -15px; /* Adjust margin on hover */
+}
+
+
+/* Label container styles */
+.label-container {
+    position: absolute;
+    display: none; /* Initially hidden */
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000000;
+    width: 100px;
+    /* Additional styles for positioning */
+}
+
+
+/* Style for paragraphs within label container */
+.label-container p {
+    margin: 0 10px; /* Add margin to paragraphs */
+}
+
