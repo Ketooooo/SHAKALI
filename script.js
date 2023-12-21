@@ -1,3 +1,41 @@
+// Add this to your existing script.js file
+document.addEventListener("DOMContentLoaded", function() {
+  const header = document.querySelector('.header');
+  let isHeaderFixed = false;
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50 && !isHeaderFixed) {
+      header.classList.add('fixed');
+      isHeaderFixed = true;
+    } else if (window.scrollY <= 50 && isHeaderFixed) {
+      header.classList.remove('fixed');
+      isHeaderFixed = false;
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const headerText = document.getElementById('headerText');
+
+  setInterval(function() {
+      const currentText = headerText.innerText;
+      const newText = toggleRandomCase(currentText);
+      headerText.innerText = newText;
+  }, 1000);
+});
+
+function toggleRandomCase(text) {
+  const indexToChange = Math.floor(Math.random() * text.length);
+  
+  return text.split('').map(function(char, index) {
+      // Change the case of the randomly selected letter
+      return index === indexToChange ? toggleCase(char) : char;
+  }).join('');
+}
+
+function toggleCase(char) {
+  // Toggle the case of a single character
+  return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+}
 document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll(".image-grid img");
     const labelContainer = document.querySelector(".label-container");
@@ -11,8 +49,19 @@ document.addEventListener("DOMContentLoaded", function() {
       { label: "ES BATONI ROMELIC CXVIRIT XNAVDA MIWAS DA HALSTUXIT SADILS MIIRTMEVDA", color: getRandomColor() },
       { label: "UKVE DAVIGALE", color: getRandomColor() },
       { label: "KASHNE GRDZELI DA LAMAZI", color: getRandomColor() },
-      { label: "RAGACA YLEOBA BY MEKO", color: getRandomColor() },
-      { label: "TAVXEDI MAIKA BY KETO", color: getRandomColor() }
+      { label: "AXALI NAWSOVI JEMPRI BY TUTUTSI", color: getRandomColor() },
+      { label: "DIDI QONGUREBIANI SIZMARTMWERI BY KETINO", color: getRandomColor() },
+      { label: "TUTUTSI GAMWVIRVALE MAIKA", color: getRandomColor() },
+      { label: "RAGACA MORIGI IDIOTOBA", color: getRandomColor() },
+      { label: "UCXOELEBIS DAGOIMEBIS SHESADZLEBLOBA", color: getRandomColor() },
+      { label: "QUCHIS MARKETEBZE GAMOJDOMA VINIGRETIVIT", color: getRandomColor() },
+      { label: "PUT ME I A MOVIE", color: getRandomColor() },
+      { label: "ABA OMI GINDAT?", color: getRandomColor() },
+      { label: "AI ZVIGENEBI KIARA AFTREBI XART, AFTREBI", color: getRandomColor() },
+      { label: "KARGAD CHAIXEDET SARKESHI DA TQVENI CXOVREBIS IM EPIZODS MIXEDET", color: getRandomColor() },
+      { label: "SHTERUKELA GARI XO GADAIRIA DA ES MEGAN MARKELIC XO MOIYVANA COLAD", color: getRandomColor() },
+      { label: "NU MIETENEBI IQ SADAC AR ARIS SHENI ADGILI, AR ARIS SHENI ADGILI", color: getRandomColor() },
+      { label: "DA GAAMWESES SAD... LOS AANJELESSHI", color: getRandomColor() }
       // Add more labels and colors as needed
     ];
   
@@ -68,3 +117,4 @@ document.addEventListener("DOMContentLoaded", function() {
       return color;
     }
   });
+

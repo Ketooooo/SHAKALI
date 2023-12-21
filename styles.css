@@ -7,29 +7,37 @@ body {
     background-color: #f0f0f0;
 }
 
-
-.page-header {
-    background-color: #ffffff; /* White background */
-    border-bottom: 2px solid #000000; /* Black border at the bottom */
-    padding: 10px; /* Add padding to the header */
-    text-align: center; /* Center-align the text */
+.header {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    font-weight: bold; /* Make the text bold */
+    align-items: center;
+    justify-content: center;
+    
 }
 
-.page-header h1 {
-    margin: 0; /* Remove default margin for h1 */
-    color: #000000; /* Black text color */
+.vertical-name {
+    margin-top: 60px; /* Add margin to the top */
+    font-size: 24px; /* Adjust font size as needed */
+    line-height: 30px; /* Adjust line height as needed */
+}
+
+.header #headerText {
+    
+    font-size: 60px; /* Adjust the font size as needed */
+    transition: color 0.5s; /* Add a transition effect for smooth color changes */
 }
 
 .image-container {
     width: 90%; /* Adjust the width of the container */
     height: auto; /* Allow the height to adjust based on the image's aspect ratio */
-    padding: 5%; /* Add pSadding to increase the distance from the website walls */
+    padding: 6%; /* Add pSadding to increase the distance from the website walls */
     box-sizing:content-box; /* Include padding in the total width */
 }
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Display 3 pictures in a row */
+    grid-template-columns: repeat(4, 1fr); /* Display 3 pictures in a row */
     gap: 100px; /* Increased the gap between images */
     margin: 0 auto; /* Center the grid within the container */
 }
@@ -63,4 +71,3 @@ body {
 .label-container p {
     margin: 0 10px; /* Add margin to the paragraphs within the container */
 }
-
