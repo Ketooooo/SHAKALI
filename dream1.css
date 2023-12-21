@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Hide vertical scroll bars */
+}
+
+.scroll-container {
+    overflow-x: hidden; /* Hide horizontal scroll bars */
+    overflow-y: hidden; /* Hide vertical scroll bars */
+}
+
+.image-scroll {
+    gap: 20px; /* Space between images */
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scroll bars */
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+    scrollbar-width: none; /* Hide Firefox scrollbar */
+    -ms-overflow-style: none; /* Hide IE scrollbar */
+}
+
+.image-scroll::-webkit-scrollbar {
+    display: none; /* Hide Chrome/Edge scrollbar */
+}
+
+/* Ensure images scroll horizontally */
+.image-scroll img {
+    width: 30%;
+    height: 50%;
+    flex: 0 0 auto;
+    margin-right: 50px; /* Adjust the space between images */
+    transition: transform 0.3s ease; /* Smooth transition on transform */
+}
+
+/* Enlarge image on hover */
+.image-scroll img:hover {
+    transform: scale(1.1);
+}
