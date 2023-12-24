@@ -1,57 +1,84 @@
-body {
+.body {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     min-height: 100vh;
     background-color: #f0f0f0;
-
 }
-/* Set the font family for the header text to 'Courier New' or monospace */
+
 .header {
     font-family: 'Courier New', monospace;
-
-    /* Use flexbox for the header layout */
     display: flex;
-
-    /* Set the font weight to bold */
-    font-weight: bold;
-
-    /*  darches satauri sacaa da agar gamomyves   */
-
-    /* Align items and justify content to center the text horizontally and vertically */
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-
-    /* Set the position of the header to fixed, fixing it at the top of the viewport */
-    position: fixed;
-
-    /* Set the top, left, and right positions to 0, fixing the header at the top of the viewport */
-    top: 0;
-    left: 0;
-    right: 0;
-
-    /* Set the height of the header, adjust as needed */
-    height: 10%;
-
-    /* Set the background color of the header to white */
-    background-color: #ffffff;
-
-    /* Set the z-index to ensure the header appears above other content */
+    height: 80px; /* Adjust the height as needed */
+    background-color: #1a1a1a; /* Dark background color */
+    padding: 0 20px; /* Add padding for better visual appearance */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
     z-index: 1000;
 }
 
-
-.vertical-name {
-    margin-top: 0;
-    font-size: 24px;
-    line-height: 30px;
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
-.header #headerText {
-    font-size: 70px;
-    transition: color 0.5s;
+#headerText {
+    font-size: 54px;
+    color: #ffffff; /* White text color */
 }
+
+.navigation {
+    display: flex;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #ffd700; /* Change color on hover */
+}
+
+.cta-buttons button {
+    background-color: #ffd700; /* Yellow background color */
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-buttons button:hover {
+    background-color: #e5c100; /* Darker yellow on hover */
+}
+
+#infoLabelContainer {
+    display: flex;        /* Use flexbox for layout */
+    align-items: center;  /* Align items vertically in the center */
+    justify-content: flex-end; /* Push child elements to the end (right) of the container */
+    margin-left: auto;    /* Push the container to the right, taking up available space */
+}
+
+#infoLabel {
+    font-size: 32px;      /* Set the font size (adjust as needed) */
+    background-color: #ffffff; /* White background */
+    color: #000000;       /* Black text color */
+    padding: 5px 10px;    /* Add padding around the text */
+    border: 1px solid #000000; /* Black border */
+    cursor: pointer;      /* Change cursor to indicate it's clickable */
+}
+
+
 
 .intro-container {
     position: fixed;
@@ -95,7 +122,7 @@ body {
 
 
 .image-container {
-    top: 75px; /* Adjust the top position to move the image grid down by 60 pixels */
+    top: 55px; /* Adjust the top position to move the image grid down by 60 pixels */
     height: auto;
     padding: 5%;
     box-sizing: content-box;

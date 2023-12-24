@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function() {
   const introContainer = document.querySelector(".intro-container");
   const introTitle = document.querySelector(".intro-title");
@@ -65,13 +66,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 document.addEventListener("DOMContentLoaded", function() {
   const headerText = document.getElementById('headerText');
+  
+  const fonts = ['Fantasy', 'Monaco', 'Didot', 'Comic Sans MS', 'cursive'];
+  let currentFontIndex = 0;
 
   setInterval(function() {
-      const currentText = headerText.innerText;
-      const newText = toggleRandomCase(currentText);
-      headerText.innerText = newText;
+    const currentFont = fonts[currentFontIndex];
+    headerText.style.fontFamily = currentFont;
+
+    currentFontIndex = (currentFontIndex + 1) % fonts.length;
   }, 1000);
 });
+
 
 function toggleRandomCase(text) {
   const indexToChange = Math.floor(Math.random() * text.length);
@@ -167,4 +173,3 @@ document.addEventListener("DOMContentLoaded", function() {
       return color;
     }
   });
-
