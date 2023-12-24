@@ -5,53 +5,123 @@ body {
     justify-content: center;
     min-height: 100vh;
     background-color: #f0f0f0;
-}
 
+}
+/* Set the font family for the header text to 'Courier New' or monospace */
 .header {
     font-family: 'Courier New', monospace;
+
+    /* Use flexbox for the header layout */
     display: flex;
-    font-weight: bold; /* Make the text bold */
+
+    /* Set the font weight to bold */
+    font-weight: bold;
+
+    /*  darches satauri sacaa da agar gamomyves   */
+
+    /* Align items and justify content to center the text horizontally and vertically */
     align-items: center;
     justify-content: center;
-    
+
+    /* Set the position of the header to fixed, fixing it at the top of the viewport */
+    position: fixed;
+
+    /* Set the top, left, and right positions to 0, fixing the header at the top of the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+
+    /* Set the height of the header, adjust as needed */
+    height: 10%;
+
+    /* Set the background color of the header to white */
+    background-color: #ffffff;
+
+    /* Set the z-index to ensure the header appears above other content */
+    z-index: 1000;
 }
 
+
 .vertical-name {
-    margin-top: 60px; /* Add margin to the top */
-    font-size: 24px; /* Adjust font size as needed */
-    line-height: 30px; /* Adjust line height as needed */
+    margin-top: 0;
+    font-size: 24px;
+    line-height: 30px;
 }
 
 .header #headerText {
-    
-    font-size: 60px; /* Adjust the font size as needed */
-    transition: color 0.5s; /* Add a transition effect for smooth color changes */
+    font-size: 70px;
+    transition: color 0.5s;
 }
 
+.intro-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    text-align: center;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    animation: fadeIn 2s ease-out forwards;
+    z-index: 1000000;
+}
+
+.intro-title {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.intro-description {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+
+
 .image-container {
-    width: 90%; /* Adjust the width of the container */
-    height: auto; /* Allow the height to adjust based on the image's aspect ratio */
-    padding: 6%; /* Add pSadding to increase the distance from the website walls */
-    box-sizing:content-box; /* Include padding in the total width */
+    top: 75px; /* Adjust the top position to move the image grid down by 60 pixels */
+    height: auto;
+    padding: 5%;
+    box-sizing: content-box;
+    position: relative; /* Add relative positioning */
+    
 }
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Display 3 pictures in a row */
+    grid-template-columns: repeat(3, 1fr); /* Display 3 pictures in a row */
     gap: 100px; /* Increased the gap between images */
     margin: 0 auto; /* Center the grid within the container */
 }
 
 .image-grid img {
-    width: 100%; /* Images will take up 100% of the grid cell */
+    width: 90%; /* Images will take up 100% of the grid cell */
     height: auto;
     object-fit: cover; /* Maintain aspect ratio while covering the entire grid cell */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow to images */
     transition: transform 1s, margin 1s;
+    
 }
 .image-grid img:hover {
     transform: scale(1.2); /* Increase the size of the image on hover */
     margin: -40px; /* Decrease the distance between images on hover */
+    
 }
 
 .label-container {
@@ -66,8 +136,10 @@ body {
     border: 2px solid #000000; /* Add a black border around the container */
     width: 20%; /* Set the width of the container (adjust as needed) */
     max-width: 600px; /* Set a maximum width for the container (adjust as needed) */
+    display: none;
 }
 
 .label-container p {
+    display: none;
     margin: 0 10px; /* Add margin to the paragraphs within the container */
 }

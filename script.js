@@ -1,4 +1,54 @@
-// Add this to your existing script.js file
+document.addEventListener("DOMContentLoaded", function() {
+  const introContainer = document.querySelector(".intro-container");
+  const introTitle = document.querySelector(".intro-title");
+
+  // Array of words to appear one by one
+  const words = ["Welcome", "to", "Shakali", "Studio" ];
+
+  // Function to show words with a fade effect
+  function showWords(index) {
+      if (index < words.length) {
+          setTimeout(function() {
+              introTitle.textContent += " " + words[index];
+              fadeIn(introTitle, 500); // 0.5-second delay
+              showWords(index + 1);
+          }, 500); // 0.5-second delay
+      } else {
+          // After showing all words, hide the intro container after 3 seconds
+          setTimeout(function() {
+              introContainer.style.animation = "fadeOut 2s ease-out forwards"; // Apply fade-out animation
+
+              // Set pointer-events to none to allow interaction with elements beneath introContainer
+              introContainer.style.pointerEvents = "none";
+          }, 3000);
+      }
+  }
+
+  // Function to apply fade-in effect
+  function fadeIn(element, duration) {
+      let opacity = 0;
+      const interval = 10; // Interval for changing opacity
+      const delta = interval / duration;
+
+      function updateOpacity() {
+          opacity += delta;
+          element.style.opacity = opacity;
+
+          if (opacity >= 1) {
+              clearInterval(fadeInterval);
+          }
+      }
+
+      const fadeInterval = setInterval(updateOpacity, interval);
+  }
+
+  // Start showing words
+  introContainer.style.animation = "fadeIn 2s ease-out forwards"; // Apply fade-in animation
+  showWords(0);
+});
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
   const header = document.querySelector('.header');
   let isHeaderFixed = false;
