@@ -1,3 +1,83 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // Your existing code
+
+  // Add a reference to the carousel__viewport
+  const carouselViewport = document.querySelector(".carousel__viewport");
+
+  // Add a reference to the shop buttons container
+  const shopButtonsContainer = document.querySelector(".carousel-buttons-container");
+
+  // Add an event listener to the carouselViewport for transitions
+  carouselViewport.addEventListener("transitionend", updateShopButtonVisibility);
+
+  // Initialize: hide all shop buttons
+  hideShopButtons();
+
+  // Show the first shop button on page load
+  document.getElementById("shopButton1").style.display = "block";
+
+  function updateShopButtonVisibility() {
+      // Get the current active slide
+      const activeSlideIndex = getActiveSlideIndex();
+
+      // Hide all shop buttons
+      hideShopButtons();
+
+      // Show the corresponding shop button based on the active slide
+      if (activeSlideIndex === 0) {
+          document.getElementById("shopButton1").style.display = "block";
+      } else if (activeSlideIndex === 1) {
+          document.getElementById("shopButton2").style.display = "block";
+      } else if (activeSlideIndex === 2) {
+          document.getElementById("shopButton3").style.display = "block";
+      }
+  }
+
+  function hideShopButtons() {
+      // Hide all shop buttons
+      const shopButtons = shopButtonsContainer.querySelectorAll(".shop-button");
+      shopButtons.forEach(button => {
+          button.style.display = "none";
+      });
+  }
+
+  function getActiveSlideIndex() {
+      // Get the current transform value of the carousel__viewport
+      const transformValue = getComputedStyle(carouselViewport).getPropertyValue("transform");
+      // Extract the X translation value
+      const translateX = parseFloat(transformValue.split(",")[4]);
+
+      // Calculate the approximate index of the active slide based on translateX value
+      const activeSlideIndex = Math.round(-translateX / carouselViewport.clientWidth);
+
+      return activeSlideIndex;
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const carouselViewport = document.querySelector(".carousel__viewport");
+
+  function nextSlide() {
+    const currentScroll = carouselViewport.scrollLeft;
+    const slideWidth = carouselViewport.clientWidth;
+    const nextScroll = currentScroll + slideWidth;
+    carouselViewport.scrollTo({
+      left: nextScroll,
+      behavior: "smooth"
+    });
+  }
+
+  function prevSlide() {
+    const currentScroll = carouselViewport.scrollLeft;
+    const slideWidth = carouselViewport.clientWidth;
+    const prevScroll = currentScroll - slideWidth;
+    carouselViewport.scrollTo({
+      left: prevScroll,
+      behavior: "smooth"
+    });
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const introContainer = document.querySelector(".intro-container");
@@ -173,3 +253,57 @@ document.addEventListener("DOMContentLoaded", function() {
       return color;
     }
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const carouselViewport = document.querySelector(".carousel__viewport");
+    const prevButton = document.getElementById("prevButton");
+    const nextButton = document.getElementById("nextButton");
+
+    let currentIndex = 0;
+
+    // Add event listener for the previous button
+    prevButton.addEventListener("click", function () {
+        navigateCarousel(-1);
+    });
+
+    // Add event listener for the next button
+    nextButton.addEventListener("click", function () {
+        navigateCarousel(1);
+    });
+
+    // Function to navigate the carousel
+    function navigateCarousel(direction) {
+        const slideWidth = document.querySelector(".carousel__slide").offsetWidth;
+        currentIndex = (currentIndex + direction + 3) % 3; // 3 is the number of slides
+
+        carouselViewport.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+    }
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const shopButton1 = document.getElementById("shopButton1");
+  const shopButton2 = document.getElementById("shopButton2");
+  const shopButton3 = document.getElementById("shopButton3");
+  // Add more buttons as needed
+
+  shopButton1.addEventListener("click", function() {
+      // Add unique functionality for Shop Button 1
+      alert("Shop Button 1 clicked!");
+      // Add more functionality here
+  });
+
+  shopButton2.addEventListener("click", function() {
+      // Add unique functionality for Shop Button 2
+      alert("Shop Button 2 clicked!");
+      // Add more functionality here
+  });
+
+  shopButton3.addEventListener("click", function() {
+    // Add unique functionality for Shop Button 2
+    alert("Shop Button 3 clicked!");
+    // Add more functionality here
+});
+
+  // Add event listeners for other buttons
+});

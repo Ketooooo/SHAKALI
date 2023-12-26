@@ -7,13 +7,70 @@
     min-height: 100vh;
     background-color: #f0f0f0;
 }
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    overflow: hidden;
+    position: relative; /* Add relative positioning to establish a containing block for absolute positioning */
+}
+.carousel__slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__viewport {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    
+}
+
+.slide1{
+    background-image: url("bg1.jpg");
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel__slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    background-repeat: repeat;
+}
+
+.carousel__navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel__navigation-button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.carousel__navigation-button:hover {
+    background: #555;
+}
 
 .header {
     font-family: 'Courier New', monospace;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; /* Adjust the height as needed */
+    bottom: 50%;
+    height: 13vh; /* Adjust the height as needed */
     background-color: #1a1a1a; /* Dark background color */
     padding: 0 20px; /* Add padding for better visual appearance */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
@@ -26,7 +83,7 @@
 }
 
 #headerText {
-    font-size: 54px;
+    font-size: 44px;
     color: #ffffff; /* White text color */
 }
 
@@ -169,4 +226,33 @@
 .label-container p {
     display: none;
     margin: 0 10px; /* Add margin to the paragraphs within the container */
+}
+/* Adjust the CSS to target all "Shop" buttons within the carousel slides */
+
+.carousel__slide {
+    position: relative; /* Ensure the position is relative for absolute positioning of the button */
+}
+
+.carousel-buttons-container {
+    position: absolute;
+    bottom: 55%;
+    left: 90px;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 1000;
+}
+
+.shop-button {
+    background-color: #ffd700;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.shop-button:hover {
+    background-color: #e5c100;
 }
